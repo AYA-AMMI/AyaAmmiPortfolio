@@ -62,7 +62,7 @@ const Hero = () => {
                     </div>
                 </header>
 
-                <figure>
+                <figure className="pointer-events-none md:pointer-events-auto">
                     <div className="hero-3d-layout">
                         <HeroExperience/>
                     </div>
