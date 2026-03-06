@@ -12,12 +12,11 @@ const HeroExperience = () => {
 
     return (
         <Canvas camera={{ position: [0, 0, 15], fov: 45 }}
-                style={{ pointerEvents: 'none' }}>
+                style={{ pointerEvents: (isMobile || isTablet) ? 'none' : 'auto' }}>
 
             <OrbitControls
                 enablePan={false}
                 enableZoom={!isTablet}
-                enableZoom={!isMobile}
                 maxDistance={20}
                 minDistance={5}
                 minPolarAngle={Math.PI / 5}
@@ -29,8 +28,8 @@ const HeroExperience = () => {
             <Particles count={200}/>
 
             <group scale={isMobile? 0.7 : 1}
-            position={[0,-3.5,0]}
-            rotation={[0,-Math.PI /4,0]}>
+                   position={[0,-3.5,0]}
+                   rotation={[0,-Math.PI /4,0]}>
                 <Room/>
             </group>
 
