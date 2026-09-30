@@ -216,13 +216,6 @@ const projects  = [
         imgPath: "/images/projects/internmatch.png",
     },
     {
-        name: "CiviTrack",
-        mentions: "@AYA-AMMI/CiviTrack",
-        review:
-            "A mobile app that empowers citizens to report urban issues with photos and automatic geolocation. A real-world civic tech solution built for impact.",
-        imgPath: "/images/projects/civitrack.png",
-    },
-    {
         name: "Engineer Management API",
         mentions: "@AYA-AMMI/engineer-management-api",
         review:
@@ -242,13 +235,6 @@ const projects  = [
         review:
             "A complete Python desktop app to manage books, members, and borrow/return operations — built with OOP principles, Tkinter, and Matplotlib for a clean, modular codebase.",
         imgPath: "/images/projects/LMS.png",
-    },
-    {
-        name: "Image Classification System",
-        mentions: "@AYA-AMMI",
-        review:
-            "An ML pipeline combining color, shape, and texture features (HOG, LBP, RGB histograms) with a Random Forest classifier achieving 89.47% accuracy, served via a Streamlit web interface.",
-        imgPath: "/images/projects/ICS.png",
     },
     {
         name: "AI for Inclusion — Bias Detection Auditor",
