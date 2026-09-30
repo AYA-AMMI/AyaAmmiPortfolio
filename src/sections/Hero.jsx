@@ -29,7 +29,7 @@ const Hero = () => {
                 <img src="/images/bg.png" alt="background" />
             </div>
             <div className="hero-layout">
-                <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
+                <header className="flex flex-col justify-center xl:w-[54%] w-full md:px-20 px-5">
                     <div className="flex flex-col gap-7">
                         <div className="hero-text">
                             <h1>Building
@@ -40,7 +40,7 @@ const Hero = () => {
                                             <img
                                                 src={word.imgPath}
                                                 alt={word.text}
-                                                className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"/>
+                                                className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-thistle"/>
 
                                         <span>{word.text}</span>
                                         </span>))}
@@ -50,7 +50,7 @@ const Hero = () => {
                             <h1>into Powerful Digital</h1>
                             <h1>Experiences that Matter</h1>
                         </div>
-                        <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
+                        <p className="text-ink md:text-xl relative z-10 pointer-events-none">
                             Hi, I'm Aya, a Computer Engineering Student motivated by continuous learning of new
                             technologies and collaborative teamwork.
                         </p>
@@ -62,10 +62,8 @@ const Hero = () => {
                     </div>
                 </header>
 
-                <figure className="pointer-events-none xl:pointer-events-auto">
-                    <div className="hero-3d-layout">
-                        <HeroExperience/>
-                    </div>
+                <figure className="xl:w-[46%] w-full flex justify-center">
+                    <HeroExperience/>
                 </figure>
 
             </div>

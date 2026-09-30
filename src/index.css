@@ -2,15 +2,15 @@
 @import "tailwindcss";
 
 :root {
-    --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
+    --gradient: radial-gradient(circle, #736ced 0%, #d4c1ec 100%);
 }
 
 html,
 body {
     width: 100dvw;
     overflow-x: hidden;
-    background-color: #2d2d38;
-    color: white;
+    background-color: #fef9ff;
+    color: #2b2660;
     scroll-behavior: smooth;
     font-family: "Mona Sans", sans-serif;
 }
@@ -21,17 +21,15 @@ section {
 
 @theme {
     --font-sans: "Mona Sans", sans-serif;
-    --color-white-50: #d9ecff;
-    --color-black-50: #1c1c21;
-    --color-black-100: #0e0e10;
-    --color-black-200: #282732;
-    --color-blue-50: #839cb5;
-    --color-blue-100: #2d2d38;
-    --color-mauve-100: #E0B0FF;
-    --color-ral-100: #9DA3A6;
-    --color-hks-100: #F086A3;
-    --color-copic-100: #D3A6CD;
-    --color-Prismacolor-100: #D4C9F5;
+    /* Palette Ethereal Hues */
+    --color-ghost: #fef9ff;        /* fond de page */
+    --color-petal: #f2dfd7;        /* cartes, badges */
+    --color-thistle: #d4c1ec;      /* surfaces secondaires, bordures */
+    --color-wisteria: #9f9fed;     /* accents doux */
+    --color-periwinkle: #736ced;   /* accent principal (titres larges) */
+    /* Violets fonces derives de la palette, pour un texte lisible */
+    --color-ink: #2b2660;          /* texte principal (contraste ~13:1) */
+    --color-ink-soft: #4b4590;     /* texte secondaire (contraste ~8:1) */
 }
 
 @layer utilities {
@@ -86,7 +84,7 @@ section {
     }
 
     .hero-layout {
-        @apply relative z-10 xl:mt-20 mt-32 md:h-dvh h-[80vh] flex xl:items-center items-start justify-center;
+        @apply relative z-10 xl:mt-20 mt-32 flex xl:flex-row flex-col items-center justify-center gap-10 xl:min-h-dvh pb-10;
     }
 
     .hero-text {
@@ -100,18 +98,20 @@ section {
     }
 
     .hero-badge {
-        @apply bg-black-200 py-2 px-4 rounded-full w-fit text-sm md:text-base text-nowrap;
+        @apply bg-petal text-ink py-2 px-4 rounded-full w-fit text-sm md:text-base text-nowrap;
     }
 
     .hero-3d-layout {
-        @apply xl:w-[70%] w-full h-full min-h-[50vh] absolute xl:-top-20 top-24 xl:-right-20 right-0;
+        @apply xl:w-[70%] w-full h-full absolute xl:-top-20 xl:-right-20 right-0
+        top-0 min-h-[40vh] xl:min-h-[50vh]
+        pointer-events-none xl:pointer-events-auto;
     }
 
     .navbar {
         @apply fixed w-full left-1/2 py-5 px-5 md:px-20 -translate-x-1/2 z-[100] transition-all duration-300 ease-in-out;
 
         &.scrolled {
-            @apply top-0 bg-[#2d2d38];;
+            @apply top-0 bg-ghost shadow-md shadow-thistle/60;
         }
 
         &.not-scrolled {
@@ -123,7 +123,7 @@ section {
         }
 
         .logo {
-            @apply text-copic-100 text-xl md:text-2xl font-semibold transition-transform duration-300 hover:scale-105;
+            @apply text-periwinkle text-xl md:text-2xl font-semibold transition-transform duration-300 hover:scale-105;
         }
 
         nav.desktop {
@@ -133,14 +133,14 @@ section {
                 @apply flex space-x-8;
 
                 li {
-                    @apply text-white-50 relative;
+                    @apply text-ink relative;
 
                     span {
-                        @apply transition-colors duration-300 hover:text-white;
+                        @apply transition-colors duration-300 hover:text-periwinkle;
                     }
 
                     .underline {
-                        @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-copic-100 transition-all duration-300 group-hover:w-full;
+                        @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-periwinkle transition-all duration-300 group-hover:w-full;
                     }
                 }
             }
@@ -150,10 +150,10 @@ section {
             @apply flex;
 
             .inner {
-                @apply px-5 py-2 rounded-lg bg-white-50 text-black group-hover:bg-[#2d2d38] transition-colors duration-300;
+                @apply px-5 py-2 rounded-lg bg-ink text-ghost group-hover:bg-ink-soft transition-colors duration-300;
 
                 span {
-                    @apply group-hover:text-white transition-colors duration-300;
+                    @apply text-ghost transition-colors duration-300;
                 }
             }
         }
@@ -185,7 +185,7 @@ section {
                 }
 
                 h2 {
-                    @apply text-2xl text-copic-100 md:text-3xl lg:text-4xl font-bold;
+                    @apply text-2xl text-periwinkle md:text-3xl lg:text-4xl font-bold;
                 }
             }
         }
@@ -212,21 +212,21 @@ section {
     }
 
     .cta-button {
-        @apply px-4 py-4 rounded-lg bg-black-200 flex justify-center items-center relative cursor-pointer overflow-hidden;
+        @apply px-4 py-4 rounded-lg bg-thistle flex justify-center items-center relative cursor-pointer overflow-hidden;
 
         .bg-circle {
             @apply absolute -right-10 origin-center top-1/2 -translate-y-1/2
             w-[120%] h-[120%] group-hover:size-10 group-hover:right-10
-            rounded-full bg-copic-100 transition-all duration-500;
+            rounded-full bg-wisteria transition-all duration-500;
         }
 
         .text {
-            @apply uppercase md:text-lg text-black transition-all duration-500
-            group-hover:text-copic-100 group-hover:-translate-x-5 xl:translate-x-0 -translate-x-5;
+            @apply uppercase md:text-lg text-ink transition-all duration-500
+            group-hover:text-ink group-hover:-translate-x-5 xl:translate-x-0 -translate-x-5;
         }
 
         .arrow-wrapper {
-            @apply group-hover:bg-copic-100 size-10 rounded-full absolute right-10 top-1/2
+            @apply group-hover:bg-wisteria size-10 rounded-full absolute right-10 top-1/2
             -translate-y-1/2 flex justify-center items-center overflow-hidden;
 
             img {
@@ -236,14 +236,14 @@ section {
     }
 
     .card-border {
-        @apply border border-[#2D3240] bg-[#2D3240];
+        @apply border border-thistle bg-petal;
     }
 
     .marquee-item {
         @apply md:w-20 w-16;
     }
     .marquee-item img {
-        filter: invert(1) sepia(1) saturate(3) hue-rotate(200deg) opacity(0.85);
+        filter: grayscale(1) opacity(0.7);
     }
 
     .timeline-wrapper {
@@ -251,11 +251,11 @@ section {
     }
 
     .timeline {
-        @apply absolute z-30 h-[110%] -top-10 w-14 md:w-28 bg-[#2d2d38];
+        @apply absolute z-30 h-[110%] -top-10 w-14 md:w-28 bg-ghost;
     }
 
     .timeline-logo {
-        @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center md:-translate-y-7 border border-black-50 bg-black-100;
+        @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center md:-translate-y-7 border border-thistle bg-petal;
     }
 
     .exp-card-wrapper {
@@ -267,14 +267,14 @@ section {
     }
 
     .tech-card-animated-bg {
-        @apply absolute left-0 bottom-[-100%] w-full h-full bg-[#2D3240] group-hover:bottom-0 transition-all duration-700;
+        @apply absolute left-0 bottom-[-100%] w-full h-full bg-thistle group-hover:bottom-0 transition-all duration-700;
     }
 
     .tech-card-content {
         @apply flex flex-col md:justify-center items-center xl:gap-5 xl:h-[50vh] overflow-hidden relative z-10 group-hover:cursor-grab;
 
         & p {
-            @apply text-lg 2xl:text-2xl pb-5 xl:pb-0 font-semibold text-white-50 text-center;
+            @apply text-lg 2xl:text-2xl pb-5 xl:pb-0 font-semibold text-ink text-center;
         }
     }
 
@@ -288,16 +288,17 @@ section {
 
     form {
         label {
-            @apply block text-white-50 mb-2;
+            @apply block text-ink mb-2;
         }
 
         input,
         textarea {
-            @apply w-full px-4 py-4 md:text-base text-sm placeholder:text-blue-50 bg-blue-100 rounded-md;
+            @apply w-full px-4 py-4 md:text-base text-sm text-ink placeholder:text-ink-soft bg-ghost border-2 border-wisteria rounded-md
+            focus:outline-none focus:border-periwinkle focus:ring-4 focus:ring-thistle;
         }
 
         a {
-            @apply w-full py-4 bg-white text-black font-semibold rounded-md flex justify-center items-center gap-2;
+            @apply w-full py-4 bg-ink text-ghost font-semibold rounded-md flex justify-center items-center gap-2;
 
             img {
                 @apply inline-block;
@@ -306,7 +307,7 @@ section {
     }
 
     .footer {
-        @apply my-10 md:mt-20 mt-10 text-white-50 px-5 md:px-20 xl:px-20 flex items-center justify-center;
+        @apply my-10 md:mt-20 mt-10 text-ink px-5 md:px-20 xl:px-20 flex items-center justify-center;
 
         .footer-container {
             @apply grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-0 w-full;
@@ -320,7 +321,7 @@ section {
             @apply flex items-center justify-center gap-5;
 
             .icon {
-                @apply border border-black-50 bg-black-100 flex justify-center items-center rounded-xl size-10 md:size-12 cursor-pointer transition-all duration-500 hover:bg-black-50;
+                @apply border border-thistle bg-petal flex justify-center items-center rounded-xl size-10 md:size-12 cursor-pointer transition-all duration-500 hover:bg-thistle;
             }
 
             img {
@@ -376,29 +377,28 @@ section {
     width: 2px;
     background: linear-gradient(
             0deg,
-            rgba(69, 222, 196, 0) 0%,
-            #e0b0ff 25%,
-            #e6e6fa 37.51%,
-            green 62.83%,
-            red 92.91%
+            rgba(159, 159, 237, 0) 0%,
+            #9f9fed 25%,
+            #d4c1ec 37.51%,
+            #736ced 62.83%,
+            #2b2660 92.91%
     );
 }
 
 .gradient-edge:nth-of-type(1) {
     left: 0;
-    background: rgb(0, 0, 0);
     background: linear-gradient(
             90deg,
-            #2d2d38 0%,
-            rgba(255, 255, 255, 0) 100%
+            #fef9ff 0%,
+            rgba(254, 249, 255, 0) 100%
     );
 }
 .gradient-edge:nth-of-type(2) {
     right: 0;
     background: linear-gradient(
             -90deg,
-            #2d2d38 0%,
-            rgba(255, 255, 255, 0) 100%
+            #fef9ff 0%,
+            rgba(254, 249, 255, 0) 100%
     );
 }
 
@@ -477,4 +477,15 @@ section {
 
 .card:hover::before {
     opacity: 1;
+}
+/* Hero desktop : titre un peu plus petit pour equilibrer avec la photo */
+@media (min-width: 1280px) {
+    .hero-text { font-size: 46px; }
+    .hero-text .slide { height: 60px; }
+    .hero-text img { width: 2.25rem; height: 2.25rem; }
+}
+@media (min-width: 1536px) {
+    .hero-text { font-size: 54px; }
+    .hero-text .slide { height: 70px; }
+    .hero-text img { width: 2.5rem; height: 2.5rem; }
 }

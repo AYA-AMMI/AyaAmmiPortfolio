@@ -30,10 +30,10 @@ const navLinks = [
 
 
 const counterItems = [
-    { value: 3, suffix: "+", label: "Years of Study" },
+    { value: 5, suffix: "+", label: "Years of Study" },
     { value: 15, suffix: "+", label: "Projects Built" },
     { value: 10, suffix: "+", label: "Technologies Used" },
-    { value: 1, suffix: "", label: "Internship Experience" },
+    { value: 2, suffix: "", label: "Internship Experiences" },
 ];
 
 const logoIconsList = [
@@ -140,27 +140,50 @@ const techStackIcons = [
 
 const expCards = [
     {
-        review: "During my internship, I demonstrated both strong initiative and technical skills. I made a meaningful contribution to the Aladilemma platform and consistently delivered clean, well-thought-out code.",
-        imgPath: "/images/exp1.png",
+        review: "A self-driven student with a strong passion for building real software. My academic projects show a solid grasp of both backend and desktop development.",
+        imgPath: "/images/exp2.png",
         logoPath: "/images/logo1.png",
-        title: "Software Engineering Intern",
-        date: "July 2025 – August 2025",
+        title: "Software Engineering Student",
+        date: "September 2022 – Present (graduating 2027)",
         responsibilities: [
-            "Developed features for the 'Aladilemma' web platform using Symfony, PHP, JavaScript, and CSS.",
-            "Designed and implemented interactive UI components to enhance the user experience.",
-            "Optimized backend logic and collaborated using Git for version control and issue tracking.",
+            "Pursuing an Engineer's Degree in Computer Engineering at ENSA Oujda, now in my 5th year, specializing in Software Engineering and AI.",
+            "Building full-stack web apps, desktop applications, and REST APIs as part of coursework.",
+            "Completed two internships and joined the Maison des Sciences alongside my studies (see below).",
         ],
     },
     {
-        review: "A self-driven student with a strong passion for building real software. My academic projects show a solid grasp of both backend and desktop development.",
-        imgPath: "/images/exp2.png",
+        review: "Sharing science and technology with students and the public: mentoring, workshops, and live demos of projects built with my team.",
+        imgPath: "/images/foia-logo.png",
         logoPath: "/images/logo2.png",
-        title: "Software Engineering Student",
-        date: "September 2022 – Present",
+        title: "Science Educator — Maison des Sciences",
+        date: "September 2025 – Present",
         responsibilities: [
-            "Pursuing an Engineer's Degree in Computer Science at ENSA Oujda (ENSAO).",
-            "Building full-stack web apps, desktop applications, and REST APIs as part of coursework.",
-            "Actively learning Data & AI technologies to apply in real-world projects.",
+            "Member of the Maison des Sciences (Fondation Omar Ibn Abdelaziz), helping supervise and run the pedagogical program: guiding students from discovering scientific fields to orientation, project building, and competitions.",
+            "Organizer and facilitator at the 13th Science Festival of the Oriental (Oujda, February 12–14, 2026), presenting to the public a Python-based plant-disease detection prototype built with my team.",
+        ],
+    },
+    {
+        review: "During my internship, I demonstrated both strong initiative and technical skills. I made a meaningful contribution to the Aladilemma platform and consistently delivered clean, well-thought-out code.",
+        imgPath: "/images/exp1.png",
+        logoPath: "/images/maison-d-ia.png",
+        title: "Web Developer Intern — La Maison de l'Intelligence Artificielle",
+        date: "July 2025 – August 2025",
+        responsibilities: [
+            "Analyzed the existing 'Aladilemma' platform, a multilingual ethical-dilemma research platform inspired by the Moral Machine Experiment, and rebuilt it from scratch with Symfony, PHP, MySQL, JavaScript, and CSS.",
+            "Designed and implemented an admin dashboard and interactive UI components, with GDPR-compliant data collection.",
+            "Collaborated using Git for version control and issue tracking.",
+        ],
+    },
+    {
+        review: "Two months on a live platform: shipping features end to end, keeping the API reliable, and catching issues before production.",
+        imgPath: "/images/Afriqu-IA.png",
+        logoPath: "/images/logo4.png",
+        title: "Software Engineering Intern — Afriq'AI Institute",
+        date: "2026 · 2 months",
+        responsibilities: [
+            "Took over and maintained an existing platform for Africa's AI ecosystem (members, events, publications, country rankings) with Spring Boot 3 / Java 21, PostgreSQL, React and TypeScript.",
+            "Worked in a team of 6 and delivered 6 end-to-end business features; managed 50+ API endpoints secured with JWT.",
+            "Identified 8 anomalies before production through API testing with Bruno and code reviews; deployed with Docker and GitLab CI/CD.",
         ],
     },
 ];
@@ -168,11 +191,19 @@ const expCards = [
 const expLogos = [
     {
         name: "logo1",
-        imgPath: "/images/logo1.png",
+        imgPath: "/images/maison-d-ia.png",
     },
     {
         name: "logo2",
-        imgPath: "/images/logo2.png",
+        imgPath: "/images/foia-logo.png",
+    },
+    {
+        name: "logo3",
+        imgPath: "/images/exp2.png",
+    },
+    {
+        name: "logo4",
+        imgPath: "/images/Afriqu-IA.png",
     },
 ];
 
@@ -218,6 +249,26 @@ const projects  = [
         review:
             "An ML pipeline combining color, shape, and texture features (HOG, LBP, RGB histograms) with a Random Forest classifier achieving 89.47% accuracy, served via a Streamlit web interface.",
         imgPath: "/images/projects/ICS.png",
+    },
+    {
+        name: "AI for Inclusion — Bias Detection Auditor",
+        mentions: "Private repository",
+        review:
+            "An AI-powered auditor that scores job postings for gender bias in text and images, combining NLP (spaCy, mDeBERTa) and Computer Vision (DeepFace) into a single inclusivity score. Final Year Project (PFA) at ENSAO — source code is private, available on request.",
+    },
+    {
+        name: "E-commerce Microservices",
+        mentions: "@AYA-AMMI",
+        review:
+            "An e-commerce application designed as a microservices architecture with Java 17 and Spring Boot: Spring Data JPA with MySQL and MongoDB, asynchronous messaging with RabbitMQ/Kafka, authentication with Keycloak, Docker containers, and automated tests with JUnit and Testcontainers.",
+        // imgPath: "/images/projects/ecommerce.png", // optionnel : ajoute une capture puis decommente
+    },
+    {
+        name: "Todo List App",
+        mentions: "@AYA-AMMI/todo-list",
+        review:
+            "A full-stack Todo List application built with React (Vite), Express.js, and MongoDB. Users create, update, complete, and delete tasks through a responsive interface backed by a REST API, with a Dockerized MongoDB environment.",
+        // imgPath: "/images/projects/todolist.png", // optionnel : ex. une capture du dossier screenshots du depot
     },
 ];
 

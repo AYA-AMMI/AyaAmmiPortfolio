@@ -9,8 +9,8 @@ const AnimatedCounter = () => {
             className="padding-x-lg xl:mt-0 mt-32">
             <div className="mx-auto grid-4-cols">
                 {counterItems.map((item, index) => (
-                    <div key={index} className="bg-zinc-700 rounded-lg p-10 flex flex-col justify-center">
-                        <div className="counter-number text-white-50 text-5xl font-bold mb-2">
+                    <div key={index} className="bg-petal border border-thistle rounded-lg p-10 flex flex-col justify-center">
+                        <div className="counter-number text-periwinkle text-5xl font-bold mb-2">
                             <CountUp
                                 suffix={item.suffix}
                                 end={item.value}
@@ -19,7 +19,7 @@ const AnimatedCounter = () => {
                                 scrollSpyOnce={false}
                             />
                         </div>
-                        <div className="text-white-50 text-lg">{item.label}</div>
+                        <div className="text-ink-soft text-lg">{item.label}</div>
                     </div>
                 ))}
             </div>

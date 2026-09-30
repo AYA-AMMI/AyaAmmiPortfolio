@@ -11,8 +11,8 @@ const FeatureCards = () => (
                     <div className="size-14 flex items-center justify-center rounded-full">
                         <img src={imgPath} alt={title} />
                     </div>
-                    <h3 className="text-white-100 text-2xl font-semibold mt-2">{title}</h3>
-                    <p className="text-white-50 text-lg">{desc}</p>
+                    <h3 className="text-ink text-2xl font-semibold mt-2">{title}</h3>
+                    <p className="text-ink-soft text-lg">{desc}</p>
                 </div>
             ))}
         </div>

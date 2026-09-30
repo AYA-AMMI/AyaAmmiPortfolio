@@ -22,7 +22,7 @@ const ExperienceSection = () => {
                     start:'top 80%'
                 }
             })
-    })
+        })
         gsap.to('.timeline', {
             transformOrigin: 'bottom bottom',
             ease: 'power1.inOut',
@@ -63,9 +63,11 @@ const ExperienceSection = () => {
                             <div key={card.title} className="exp-card-wrapper">
                                 <div className="xl:w-2/6">
                                     <GlowCard card={card}>
-                                        <div>
-                                            <img src={card.imgPath} alt="exp-img" />
-                                        </div>
+                                        {card.imgPath && (
+                                            <div>
+                                                <img src={card.imgPath} alt="exp-img" />
+                                            </div>
+                                        )}
                                     </GlowCard>
                                 </div>
                                 <div className="xl:w-4/6">
@@ -76,17 +78,17 @@ const ExperienceSection = () => {
                                         </div>
                                         <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
                                             <div className="timeline-logo">
-                                                <img src={card.logoPath} alt="logo" />
+                                                {card.logoPath && <img src={card.logoPath} alt="logo" />}
                                             </div>
                                             <div>
                                                 <h1 className="font-semibold  text-3xl">{card.title}</h1>
-                                                <p className="my-5 text-white-50">
+                                                <p className="my-5 text-ink">
                                                     &nbsp;{card.date}
                                                 </p>
-                                                <p className="text-[#839CB5] italic">
+                                                <p className="text-ink-soft italic">
                                                     Responsibilities
                                                 </p>
-                                                <ul className="list-disc ms-5 mt-5 flex flex-col gap-5 text-white-50">
+                                                <ul className="list-disc ms-5 mt-5 flex flex-col gap-5 text-ink">
                                                     {card.responsibilities.map(
                                                         (responsibility, index) => (
                                                             <li key={index} className="text-lg">

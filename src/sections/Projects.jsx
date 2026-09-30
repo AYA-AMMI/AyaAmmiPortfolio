@@ -8,16 +8,18 @@ const Projects = () => {
         <section id="projects" className="flex-center section-padding">
             <div className="w-full h-full md:px-10 px-5">
                 <TitleHeader title="My Projects"
-                sub="Things I've Built"/>
+                             sub="Things I've Built"/>
                 <div className="lg:columns-3 md:columns:2 columns-1 mt-16">
                     {projects.map(({ imgPath,name,mentions,review })=>(
-                        <GlowCard card={{review}}>
+                        <GlowCard key={name} card={{review}}>
                             <div className="flex items-center gap-3">
+                                {imgPath && (
+                                    <div>
+                                        <img src={imgPath} alt={name}/>
+                                    </div>
+                                )}
                                 <div>
-                                    <img src={imgPath} alt={name}/>
-                                </div>
-                                <div>
-                                    <p className="font-bold text-copic-100">{name}</p>
+                                    <p className="font-bold text-ink-soft">{name}</p>
                                 </div>
                             </div>
                         </GlowCard>

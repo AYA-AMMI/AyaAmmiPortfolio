@@ -50,7 +50,7 @@ const ShowcaseSection = () => {
                         </div>
                         <div className="text-content">
                             <h2>Support and Supervision for Seniors Made Easy with a Smart Care App</h2>
-                            <p className="text-white-50 md:text-xl">
+                            <p className="text-ink md:text-xl">
                                 An Android application built with Java, XML, and the MVVM architecture, integrated with Firebase services for authentication, cloud data, and push notifications, delivering a reliable and user-friendly healthcare experience.
                             </p>
                         </div>
@@ -58,13 +58,13 @@ const ShowcaseSection = () => {
 
                     <div className="project-list-wrapper overflow-hidden">
                         <div  ref={project2Ref} className="project">
-                            <div className="image-wrapper bg-white-50">
+                            <div className="image-wrapper bg-thistle">
                                 <img src="/images/project2.png" alt="InternMatch"/>
                             </div>
                             <h2>Smart Internship Matcher</h2>
                         </div>
                         <div className="project" ref={project3Ref}>
-                            <div className="image-wrapper bg-white-50">
+                            <div className="image-wrapper bg-thistle">
                                 <img src="/images/project3.png" alt="MedecinApp"/>
                             </div>
                             <h2>A desktop application for managing patients</h2>

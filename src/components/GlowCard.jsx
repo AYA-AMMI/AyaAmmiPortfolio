@@ -32,13 +32,15 @@ const GlowCard = ({ card, index, children }) => {
             <div className="glow"></div>
             <div className="flex items-center gap-1 mb-5">
                 {Array.from({ length: 5 }, (_, i) => (
-                    <img key={i} src="/images/star.png" alt="star" className="size-5" />
+                    <svg key={i} viewBox="0 0 24 24" className="size-5 fill-wisteria" aria-hidden="true">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
                 ))}
             </div>
             {children}
 
             <div className="mb-5">
-                <p className="text-white-100 text-lg">{card.review}</p>
+                <p className="text-ink text-lg">{card.review}</p>
             </div>
 
         </div>
